@@ -38,21 +38,12 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
         }
 
         .logo-img {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             background: #3a3a3a;
-        }
-
-        .logo-text {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: white;
-            line-height: 1.1;
-            letter-spacing: 0.5px;
         }
 
         .nav-links {
@@ -72,8 +63,64 @@
             color: #ffd700;
         }
 
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .instagram-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background: #3a3a3a;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+        }
+
         .hero {
-            background: linear-gradient(rgba(58,58,58,0.6), rgba(58,58,58,0.6)), url('https://images.unsplash.com/photo-1587135941948-670b381f08ce?w=1600');
+            background: linear-gradient(rgba(58,58,58,0.6), rgba(58,58,58,0.6)), url('https://i.imgur.com/wbyq0nD.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -122,11 +169,23 @@
             padding: 5rem 3rem;
         }
 
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
         h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             text-align: center;
             color: #3a3a3a;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
         }
 
         .services {
@@ -332,6 +391,15 @@
             .logo-text {
                 font-size: 1.2rem;
             }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 0.8rem 2rem;
+            }
+
+            .hero {
+                background-attachment: scroll;
+            }
         }
     </style>
 </head>
@@ -340,13 +408,19 @@
         <nav>
             <div class="logo-container">
                 <img src="https://i.imgur.com/dewjPNF.png" alt="NorcalLinePro Logo" class="logo-img">
-                <span class="logo-text">NORCAL LINE PRO</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                <li><a href="https://www.instagram.com/norcallinepro/" target="_blank" class="social-link">
+                    <svg class="instagram-icon" viewBox="0 0 24 24" fill="#ffd700" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Instagram
+                </a></li>
             </ul>
         </nav>
     </header>
@@ -451,6 +525,34 @@
     <footer>
         <p>&copy; 2025 <a href="http://NorcalLinePro.com">NorcalLinePro.com</a> - Professional Parking Lot Striping Services</p>
         <p>Sacramento, CA | (916) 572-9334</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://www.instagram.com/norcallinepro/" target="_blank" style="color: #ffd700; text-decoration: none;">
+                Follow us on Instagram @norcallinepro
+            </a>
+        </p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
