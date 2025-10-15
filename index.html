@@ -29,12 +29,10 @@
         }
 
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 3rem;
         }
 
         .logo-container {
@@ -75,7 +73,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(58,58,58,0.7), rgba(58,58,58,0.7)), url('https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=1600');
+            background: linear-gradient(rgba(58,58,58,0.6), rgba(58,58,58,0.6)), url('https://images.unsplash.com/photo-1587135941948-670b381f08ce?w=1600');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -121,9 +119,7 @@
         }
 
         section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 5rem 3rem;
         }
 
         h2 {
@@ -139,9 +135,24 @@
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .service-card {
@@ -182,6 +193,9 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .feature-item {
@@ -212,9 +226,24 @@
 
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             margin-top: 3rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 1024px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .photo-item {
@@ -249,6 +278,7 @@
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .contact-info {
@@ -309,7 +339,7 @@
     <header>
         <nav>
             <div class="logo-container">
-                <img src="https://i.postimg.cc/cLWGM4Fw/norcal-logo.png" alt="NorcalLinePro Logo" class="logo-img">
+                <img src="https://i.imgur.com/dewjPNF.png" alt="NorcalLinePro Logo" class="logo-img">
                 <span class="logo-text">NORCAL LINE PRO</span>
             </div>
             <ul class="nav-links">
@@ -389,22 +419,22 @@
         <h2>Our Work</h2>
         <div class="photo-grid">
             <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=600" alt="Freshly striped parking lot">
+                <img src="https://i.imgur.com/STXafWc.jpg" alt="Fresh parking lot striping with handicap space">
             </div>
             <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600" alt="Parking lot lines and markings">
+                <img src="https://i.imgur.com/uyOGitg.jpg" alt="Apartment complex parking lot striping">
             </div>
             <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Commercial parking lot striping">
+                <img src="https://i.imgur.com/69yC8D3.jpg" alt="ADA compliant handicap parking space">
             </div>
             <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?w=600" alt="Handicap parking space markings">
+                <img src="https://i.imgur.com/GPrzLra.jpg" alt="Commercial parking lot before and after striping">
             </div>
             <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1591608971362-f08b2a75731a?w=600" alt="Fresh yellow parking lines">
+                <img src="https://i.imgur.com/HDZDTeB.jpg" alt="Parking lot striping equipment in action">
             </div>
             <div class="photo-item">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600" alt="Large commercial parking area">
+                <img src="https://i.imgur.com/3VjAEbl.jpg" alt="Large commercial parking lot with fresh lines">
             </div>
         </div>
     </section>
