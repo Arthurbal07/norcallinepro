@@ -324,6 +324,25 @@
             display: block;
         }
 
+        .photo-item {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            border: 3px solid #ffd700;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
         .contact {
             background: #3a3a3a;
             color: white;
@@ -429,6 +448,9 @@
         <div class="hero-content">
             <h1>Professional Parking Lot Striping</h1>
             <p>Serving Greater Sacramento with Precision & Quality</p>
+            <p style="font-size: 1.8rem; margin-bottom: 2rem; color: #ffd700; font-weight: bold;">
+                <a href="tel:916-572-9334" style="color: #ffd700; text-decoration: none;">916-572-9334</a>
+            </p>
             <a href="#contact" class="cta-button">Get A Free Quote</a>
         </div>
     </section>
@@ -509,6 +531,15 @@
             </div>
             <div class="photo-item">
                 <img src="https://i.imgur.com/3VjAEbl.jpg" alt="Large commercial parking lot with fresh lines">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/g0CaXya.jpg" alt="Professional striping equipment and safety setup">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/LuNYpHR.jpg" alt="Fresh white parking lot lines">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/BaMaI4P.jpg" alt="Handicap parking space striping work">
             </div>
         </div>
     </section>
