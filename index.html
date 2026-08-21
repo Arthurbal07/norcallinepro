@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NorcalLinePro - Professional Parking Lot Striping | Sacramento Area</title>
+    <title>NorcalLinePro - Parking Lot Striping, Seal Coat & Asphalt | Northern California</title>
+
+    <meta property="og:title" content="NorcalLinePro - Parking Lot Striping, Seal Coat & Asphalt">
+    <meta property="og:description" content="Professional parking lot striping, seal coating, and asphalt services serving Northern California.">
+    <meta property="og:image" content="https://i.imgur.com/gW2M4sR.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://norcallinepro.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NorcalLinePro - Parking Lot Striping, Seal Coat & Asphalt">
+    <meta name="twitter:description" content="Professional parking lot striping, seal coating, and asphalt services serving Northern California.">
+    <meta name="twitter:image" content="https://i.imgur.com/gW2M4sR.png">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/gW2M4sR.png">
+
     <style>
         * {
             margin: 0;
@@ -61,17 +73,6 @@
 
         .nav-links a:hover {
             color: #ffd700;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .instagram-icon {
-            width: 24px;
-            height: 24px;
         }
 
         .mobile-menu-btn {
@@ -272,6 +273,13 @@
             justify-content: center;
             margin: 0 auto 1rem;
             font-size: 2rem;
+            color: white;
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
         }
 
         .feature-item h3 {
@@ -285,8 +293,8 @@
 
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-top: 3rem;
             max-width: 1400px;
             margin-left: auto;
@@ -295,13 +303,14 @@
 
         @media (max-width: 1024px) {
             .photo-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         @media (max-width: 640px) {
             .photo-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.7rem;
             }
         }
 
@@ -310,7 +319,7 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s;
-            border: 3px solid #ffd700;
+            border: 2px solid #ffd700;
         }
 
         .photo-item:hover {
@@ -319,28 +328,15 @@
 
         .photo-item img {
             width: 100%;
-            height: 300px;
+            height: 200px;
             object-fit: cover;
             display: block;
         }
 
-        .photo-item {
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-            border: 3px solid #ffd700;
-        }
-
-        .photo-item:hover {
-            transform: scale(1.05);
-        }
-
-        .photo-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
+        @media (max-width: 640px) {
+            .photo-item img {
+                height: 150px;
+            }
         }
 
         .contact {
@@ -389,6 +385,40 @@
             text-decoration: none;
         }
 
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #3a3a3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .social-circle:hover {
+            background: #ffd700;
+            transform: translateY(-3px);
+        }
+
+        .social-circle svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffd700;
+            transition: fill 0.3s;
+        }
+
+        .social-circle:hover svg {
+            fill: #3a3a3a;
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2rem;
@@ -405,10 +435,6 @@
 
             .phone {
                 font-size: 1.8rem;
-            }
-
-            .logo-text {
-                font-size: 1.2rem;
             }
 
             .cta-button {
@@ -434,20 +460,14 @@
                 <li><a href="#services" onclick="closeMenu()">Services</a></li>
                 <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-                <li><a href="https://www.instagram.com/norcallinepro/" target="_blank" class="social-link">
-                    <svg class="instagram-icon" viewBox="0 0 24 24" fill="#ffd700" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                    Instagram
-                </a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Professional Parking Lot Striping</h1>
-            <p>Serving Greater Sacramento with Precision & Quality</p>
+            <h1>Professional Parking Lot Striping, Seal Coat & Asphalt</h1>
+            <p>Serving Northern California with Precision & Quality</p>
             <p style="font-size: 1.8rem; margin-bottom: 2rem; color: #ffd700; font-weight: bold;">
                 <a href="tel:916-572-9334" style="color: #ffd700; text-decoration: none;">916-572-9334</a>
             </p>
@@ -463,16 +483,16 @@
                 <p>Professional line striping for parking lots of all sizes. Fresh, crisp lines that meet ADA compliance standards and enhance your property's appearance.</p>
             </div>
             <div class="service-card">
-                <h3>Restriping Services</h3>
-                <p>Refresh faded parking lot lines to maintain safety and aesthetics. We remove old markings and apply durable new striping.</p>
+                <h3>Seal Coating</h3>
+                <p>Protect and extend the life of your asphalt with professional seal coating. It shields your pavement from UV rays, water damage, and everyday wear, keeping your lot looking fresh and lasting longer.</p>
             </div>
             <div class="service-card">
                 <h3>ADA Compliance</h3>
                 <p>Ensure your parking lot meets all ADA requirements with properly marked handicap spaces, access aisles, and signage.</p>
             </div>
             <div class="service-card">
-                <h3>Stenciling & Symbols</h3>
-                <p>Custom stenciling including arrows, handicap symbols, fire lane markings, and no parking zones.</p>
+                <h3>Asphalt Services</h3>
+                <p>From pothole repair to crack filling and patching, we keep your asphalt surfaces smooth, safe, and long-lasting, with quality prep work that sets up striping for success.</p>
             </div>
             <div class="service-card">
                 <h3>Traffic Patterns</h3>
@@ -480,7 +500,7 @@
             </div>
             <div class="service-card">
                 <h3>Commercial & Retail</h3>
-                <p>Specialized services for shopping centers, office buildings, schools, and industrial facilities throughout Sacramento.</p>
+                <p>Specialized services for shopping centers, office buildings, schools, and industrial facilities throughout Northern California.</p>
             </div>
         </div>
     </section>
@@ -491,7 +511,7 @@
             <div class="feature-item">
                 <div class="feature-icon">✓</div>
                 <h3>Local Experts</h3>
-                <p>Serving the Greater Sacramento area with pride and expertise</p>
+                <p>Serving Northern California with pride and expertise</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">★</div>
@@ -499,7 +519,11 @@
                 <p>Premium materials and precise application for long-lasting results</p>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">⚡</div>
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 2 3 14h7v8l10-12h-7z"/>
+                    </svg>
+                </div>
                 <h3>Fast Service</h3>
                 <p>Efficient scheduling to minimize disruption to your business</p>
             </div>
@@ -515,21 +539,6 @@
         <h2>Our Work</h2>
         <div class="photo-grid">
             <div class="photo-item">
-                <img src="https://i.imgur.com/STXafWc.jpg" alt="Fresh parking lot striping with handicap space">
-            </div>
-            <div class="photo-item">
-                <img src="https://i.imgur.com/uyOGitg.jpg" alt="Apartment complex parking lot striping">
-            </div>
-            <div class="photo-item">
-                <img src="https://i.imgur.com/69yC8D3.jpg" alt="ADA compliant handicap parking space">
-            </div>
-            <div class="photo-item">
-                <img src="https://i.imgur.com/GPrzLra.jpg" alt="Commercial parking lot before and after striping">
-            </div>
-            <div class="photo-item">
-                <img src="https://i.imgur.com/HDZDTeB.jpg" alt="Parking lot striping equipment in action">
-            </div>
-            <div class="photo-item">
                 <img src="https://i.imgur.com/3VjAEbl.jpg" alt="Large commercial parking lot with fresh lines">
             </div>
             <div class="photo-item">
@@ -541,29 +550,63 @@
             <div class="photo-item">
                 <img src="https://i.imgur.com/BaMaI4P.jpg" alt="Handicap parking space striping work">
             </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/Vh3B9p3.jpg" alt="Parking lot striping project">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/43i2ps7.jpg" alt="Fresh parking lot lines">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/mFeYo4J.jpg" alt="Parking lot striping work">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/ia11Wf8.jpg" alt="Commercial parking striping">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/p0Qncpm.jpg" alt="Parking lot markings">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/j1Ef0p2.jpg" alt="Asphalt striping project">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/F8utN3Z.jpg" alt="Parking lot line work">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/Ndno3hB.jpg" alt="Parking lot striping detail">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.imgur.com/nGknLC3.jpg" alt="Northern California parking lot striping">
+            </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Contact Us Today</h2>
         <div class="contact-content">
-            <p class="contact-info">Ready to enhance your parking lot? Get a free quote from Sacramento's trusted striping professionals.</p>
+            <p class="contact-info">Ready to enhance your parking lot? Get a free quote from Northern California's trusted striping professionals.</p>
             <a href="tel:916-572-9334" class="phone">916-572-9334</a>
             <p style="margin-top: 1rem; font-size: 1.3rem;">
                 <a href="mailto:contact@norcallinepro.com" style="color: #ffd700; text-decoration: none;">contact@norcallinepro.com</a>
             </p>
-            <p style="margin-top: 2rem; font-size: 1.2rem;">Serving the Greater Sacramento Area</p>
+            <p style="margin-top: 2rem; font-size: 1.2rem;">Serving Northern California</p>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 <a href="http://NorcalLinePro.com">NorcalLinePro.com</a> - Professional Parking Lot Striping Services</p>
         <p>Sacramento, CA | (916) 572-9334 | <a href="mailto:contact@norcallinepro.com" style="color: #ffd700; text-decoration: none;">contact@norcallinepro.com</a></p>
-        <p style="margin-top: 1rem;">
-            <a href="https://www.instagram.com/norcallinepro/" target="_blank" style="color: #ffd700; text-decoration: none;">
-                Follow us on Instagram @norcallinepro
+        <div class="social-icons">
+            <a href="https://www.instagram.com/norcallinepro/" target="_blank" class="social-circle" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
             </a>
-        </p>
+            <a href="https://www.facebook.com/profile.php?id=61574415533763" target="_blank" class="social-circle" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/>
+                </svg>
+            </a>
+        </div>
     </footer>
 
     <script>
@@ -577,12 +620,10 @@
             navLinks.classList.remove('active');
         }
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const nav = document.querySelector('nav');
             const navLinks = document.getElementById('navLinks');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            
+
             if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
             }
