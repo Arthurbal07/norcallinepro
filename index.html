@@ -143,23 +143,13 @@
             pointer-events: none;
         }
 
-        /* Oversized ~15% so YouTube's edge UI is cropped off; hidden until the video is actually playing */
-        .hero-video iframe {
+        .hero-video video {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 115vw;
-            height: 64.7vw;
-            min-height: 115%;
-            min-width: 204.4vh;
-            transform: translate(-50%, -50%);
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border: 0;
-            opacity: 0;
-            transition: opacity 0.8s ease;
-        }
-
-        .hero-video.playing iframe {
-            opacity: 1;
         }
 
         .hero::after {
@@ -492,13 +482,10 @@
 
     <section id="home" class="hero">
         <div class="hero-video" aria-hidden="true">
-            <iframe
-                id="heroPlayer"
-                src="https://www.youtube.com/embed/_K944rIDAfI?autoplay=1&mute=1&loop=1&playlist=_K944rIDAfI&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1&iv_load_policy=3&fs=0&showinfo=0&enablejsapi=1"
-                title="Norcal Line Pro striping video"
-                allow="autoplay; encrypted-media"
-                tabindex="-1"
-                loading="eager"></iframe>
+            <video id="heroVideo" autoplay muted loop playsinline preload="auto"
+                   poster="https://i.imgur.com/GGBBTyR.jpg" disablepictureinpicture>
+                <source src="https://i.imgur.com/3aSrguc.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="hero-content">
             <h1>Norcal Line Pro</h1>
@@ -642,46 +629,24 @@
     </footer>
 
     <script>
-        // Hero video: fade in once playing, and loop by seeking back to the start
-        // just before the end so YouTube never reaches its "ended" reload screen.
-        var heroPlayer, loopTimer;
-
-        function onYouTubeIframeAPIReady() {
-            heroPlayer = new YT.Player('heroPlayer', {
-                events: {
-                    onReady: function (e) {
-                        e.target.mute();
-                        e.target.playVideo();
-                    },
-                    onStateChange: function (e) {
-                        if (e.data === YT.PlayerState.PLAYING) {
-                            document.querySelector('.hero-video').classList.add('playing');
-                            startLoopWatch();
-                        }
-                        if (e.data === YT.PlayerState.ENDED) {
-                            e.target.seekTo(0, true);
-                            e.target.playVideo();
-                        }
-                    }
-                }
-            });
-        }
-
-        function startLoopWatch() {
-            clearInterval(loopTimer);
-            loopTimer = setInterval(function () {
-                if (!heroPlayer || !heroPlayer.getDuration) return;
-                var d = heroPlayer.getDuration();
-                var t = heroPlayer.getCurrentTime();
-                if (d > 0 && d - t < 0.6) {
-                    heroPlayer.seekTo(0, true);
-                }
-            }, 150);
-        }
-
-        var ytTag = document.createElement('script');
-        ytTag.src = 'https://www.youtube.com/iframe_api';
-        document.head.appendChild(ytTag);
+        // Some phones (e.g. Low Power Mode) block autoplay until the first touch; retry then.
+        (function () {
+            var v = document.getElementById('heroVideo');
+            if (!v) return;
+            v.muted = true;
+            var p = v.play();
+            if (p && p.catch) {
+                p.catch(function () {
+                    var retry = function () {
+                        v.play();
+                        document.removeEventListener('touchstart', retry);
+                        document.removeEventListener('click', retry);
+                    };
+                    document.addEventListener('touchstart', retry, { once: true });
+                    document.addEventListener('click', retry, { once: true });
+                });
+            }
+        })();
 
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
